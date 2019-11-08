@@ -4,7 +4,21 @@ ext {
 
             koin       : "org.koin:koin-core:2.0.1",
             koinAndroid: "org.koin:koin-android:2.0.1",
-            koinTest   : "org.koin:koin-test:2.0.1"
+            koinTest   : "org.koin:koin-test:2.0.1",
+
+            gson             : "com.google.code.gson:gson:2.8.5",
+
+            retrofit         : "com.squareup.retrofit2:retrofit:2.5.0",
+            retrofitConverter: "com.squareup.retrofit2:converter-gson:2.5.0",
+            retrofitadapter  : "com.squareup.retrofit2:adapter-rxjava2:2.5.0",
+
+            okHttp           : "com.squareup.okhttp3:okhttp:3.8.1}",
+            okhttpLogging    : "com.squareup.okhttp3:logging-interceptor:3.8.1",
+
+            rxAndroid        : 'io.reactivex.rxjava2:rxandroid:2.1.0',
+            rxJava           : 'io.reactivex.rxjava2:rxjava:2.2.0',
+            rxKotlin         : 'io.reactivex.rxjava2:rxkotlin:2.2.0',
     ]
+
 
 }

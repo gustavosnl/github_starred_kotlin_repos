@@ -16,8 +16,14 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
+
+        debug {
+            minifyEnabled false
+            buildConfigField "String", "SERVER_URL", "\"https://api.github.com/\""
+        }
         release {
             minifyEnabled false
+            buildConfigField "String", "SERVER_URL", "\"https://api.github.com/\""
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -31,8 +37,23 @@ dependencies {
 
     def dependencies = rootProject.ext.dependencies
 
+//DEPENDENCY INJECTION
     implementation dependencies.koin
     implementation dependencies.koinAndroid
+
+//RX
+    implementation dependencies.rxJava
+    implementation dependencies.rxKotlin
+    implementation dependencies.rxAndroid
+
+//NETWORK
+    implementation dependencies.gson
+    implementation dependencies.retrofit
+    implementation dependencies.retrofitConverter
+    implementation dependencies.retrofitadapter
+    implementation dependencies.okHttp
+    implementation dependencies.okhttpLogging
+
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'androidx.appcompat:appcompat:1.1.0'
