@@ -1,0 +1,10 @@
+ext {
+
+    dependencies = [
+
+            koin       : "org.koin:koin-core:2.0.1",
+            koinAndroid: "org.koin:koin-android:2.0.1",
+            koinTest   : "org.koin:koin-test:2.0.1"
+    ]
+
+}
