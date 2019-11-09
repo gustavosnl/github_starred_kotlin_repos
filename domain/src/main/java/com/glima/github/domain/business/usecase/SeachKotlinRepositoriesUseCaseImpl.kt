@@ -1,10 +1,19 @@
 package com.glima.github.domain.business.usecase
 
 import com.glima.github.domain.business.model.RepositorySearchResult
+import com.glima.github.domain.business.usecase.SearchConstants.QUERY
+import com.glima.github.domain.business.usecase.SearchConstants.SORT
+import com.glima.github.domain.repository.GithubRepositoryRepository
 import io.reactivex.Observable
 
-class SeachKotlinRepositoriesUseCaseImpl : SearchKotlinRepositoriesUseCase {
+class SeachKotlinRepositoriesUseCaseImpl(private val repository: GithubRepositoryRepository) :
+    SearchRepositoriesUseCase {
     override fun execute(params: Int): Observable<RepositorySearchResult> {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        return repository.fetchRepositories(QUERY, SORT, params)
     }
+}
+
+private object SearchConstants {
+    const val QUERY = "language:kotlin"
+    const val SORT = "stars"
 }

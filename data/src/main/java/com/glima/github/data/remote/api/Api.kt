@@ -11,6 +11,6 @@ interface Api {
     fun repositorySearch(
         @Query("searchTerm") searchTerm: String,
         @Query("sortType") sortType: String,
-        @Query("pageNumber") pageNumber: String
+        @Query("pageNumber") pageNumber: Int
     ): Observable<RepositoriesSearchResultResponse>
 }
