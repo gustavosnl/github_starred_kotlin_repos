@@ -11,17 +11,20 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager.VERTICAL
 import com.glima.github.R
-import com.glima.github.domain.business.model.Repository
 import kotlinx.android.synthetic.main.activity_main.*
+import org.koin.android.ext.android.inject
+import org.koin.core.parameter.parametersOf
 
 class MainActivity : AppCompatActivity(), RepositoryListContract.View {
 
     private val repositoriesAdapter = GithubRepositoriesAdapter()
+    private val presenter by inject<RepositoryListContract.Presenter> { parametersOf(this) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setupViews()
+        presenter.fetchRepositories()
     }
 
     private fun setupViews() {
@@ -31,7 +34,7 @@ class MainActivity : AppCompatActivity(), RepositoryListContract.View {
         }
     }
 
-    override fun displayRepositories(repositories: List<Repository>) {
+    override fun displayRepositories(repositories: List<RepositoryVO>) {
         repositoriesAdapter.addRepositories(repositories)
     }
 

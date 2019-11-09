@@ -7,10 +7,10 @@ import retrofit2.http.Query
 
 interface Api {
 
-    @GET("search/repositories?q={searchTerm}&sort={sortType}&page={pageNumber}")
+    @GET("search/repositories?")
     fun repositorySearch(
-        @Query("searchTerm") searchTerm: String,
+        @Query("q") searchTerm: String,
         @Query("sortType") sortType: String,
-        @Query("pageNumber") pageNumber: Int
+        @Query("page") pageNumber: Int
     ): Observable<RepositoriesSearchResultResponse>
 }

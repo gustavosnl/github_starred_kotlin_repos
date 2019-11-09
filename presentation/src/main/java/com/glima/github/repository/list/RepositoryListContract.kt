@@ -1,11 +1,9 @@
 package com.glima.github.repository.list
 
-import com.glima.github.domain.business.model.Repository
-
 object RepositoryListContract {
 
     interface View {
-        fun displayRepositories(repositories: List<Repository>)
+        fun displayRepositories(repositories: List<RepositoryVO>)
         fun showLoading()
         fun hideLoading()
     }
