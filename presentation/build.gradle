@@ -54,6 +54,18 @@ dependencies {
     implementation dependencies.okHttp
     implementation dependencies.okhttpLogging
 
+//ANDROID
+    implementation dependencies.appcompat
+    implementation dependencies.cardview
+    implementation dependencies.recyclerview
+    implementation dependencies.androidx
+    implementation dependencies.constraintlayout
+    implementation dependencies.materialDesign
+    
+//ANKO
+    implementation dependencies.anko
+    implementation dependencies.ankoDesign
+
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'androidx.appcompat:appcompat:1.1.0'
