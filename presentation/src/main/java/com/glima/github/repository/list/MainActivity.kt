@@ -31,6 +31,7 @@ class MainActivity : AppCompatActivity(), RepositoryListContract.View {
         repositoriesRecyclerView.apply {
             adapter = repositoriesAdapter
             layoutManager = LinearLayoutManager(this@MainActivity, VERTICAL, false)
+            addOnScrollListener(InfiniteScrollListener(this.layoutManager) { presenter.fetchRepositories() })
         }
     }
 

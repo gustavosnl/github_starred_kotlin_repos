@@ -70,9 +70,17 @@ dependencies {
     implementation dependencies.anko
     implementation dependencies.ankoDesign
 
+//IMAGE LOADER
     implementation dependencies.picasso
 
+//DATABINDING
     kapt 'com.android.databinding:compiler:3.1.4'
+
+//Architecture Components
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.1.0'
+
+    //Paging
+    implementation 'androidx.paging:paging-runtime:2.1.0'
 
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"

@@ -13,7 +13,7 @@ class GithubRepositoriesPresenter(
     private var currentPage = 1
 
     override fun fetchRepositories() {
-        useCase.execute(currentPage)
+        useCase.execute(currentPage++)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribeBy(
@@ -26,7 +26,5 @@ class GithubRepositoriesPresenter(
                     view.hideLoading()
                 }
             )
-
-
     }
 }
